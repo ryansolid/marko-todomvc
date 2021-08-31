@@ -1,13 +1,12 @@
 <attrs/{ addNewTodo } />
-<const/handleSubmit(e) {
-  const titleInput = title();
-  addNewTodo({ title: titleInput.value });
-  titleInput.value = "";
-  e.preventDefault();
-}/>
 <header.header>
   <h1>todos</h1>
-  <form onSubmit=handleSubmit>
+  <form onSubmit(e) {
+    const titleInput = title();
+    addNewTodo({ title: titleInput.value });
+    titleInput.value = "";
+    e.preventDefault();
+  }>
     <input/title
       class="new-todo"
       placeholder="What needs to be done?"
